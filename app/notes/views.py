@@ -47,8 +47,8 @@ class NoteListView(ListAPIView):
 
         if tag_query:
             # Find all uuids in query param via regrex
-            for tag_uuid in re.findall('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}- \
-                                       [a-fA-F0-9]{4}-[a-fA-F0-9]{12}', tag_query, re.DOTALL):
+            uuid_regrex = '[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}'
+            for tag_uuid in re.findall(uuid_regrex, tag_query, re.DOTALL):
                 # Filter in loop to only keep notes which have all the tags found in query params
                 queryset = queryset.filter(tags__pk=tag_uuid, author=self.request.user)
 

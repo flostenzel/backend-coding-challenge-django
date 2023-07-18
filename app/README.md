@@ -18,11 +18,12 @@ This is a django backend for a note-taking app.
 To get started with the project, follow these steps:
 
     1. Clone the project repository to your local machine.
-    2. Create a virtual environment for the project and activate it.
+    2. Create a virtual environment in python 3.11 for the project and activate it.
     3. Install the required packages by running the command `pip install -r requirements.txt`.
     4. Go to the main app folder `cd app`
     5. Set up the database by running the command `python manage.py migrate`.
     6. Start server: `python manage.py runserver`
+    7. Run tests with `python manage.py test`
 
 ## API Reference
 
