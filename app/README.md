@@ -33,5 +33,6 @@ While server is running go to `http://localhost:8000/docs/` or `http://localhost
 
     1. Get back to PM to make sure how search features are supposed to work (Union of tags vs. intersection of tags)
     2. Add docstrings/comments to all views, models, functions ..
-    3. Read and implement coding style of thermondo (eg. query params)
-    4. Remove all typing 
+    3. Read and implement coding style of thermondo (eg. usage query params vs filter_backends)
+    4. Add test_model, test_serializer, ..
+    5. Introduce strict typing

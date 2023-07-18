@@ -11,7 +11,9 @@ from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 class NoteCreateView(CreateAPIView):
     """
-    API view for creating a new note.
+    API view for creating a new note via POST.
+    Required: title:str, body:str
+    Optional: tags: list(Tag), is_public: Boolean
     """
     serializer_class = NoteSerializer
 
@@ -59,7 +61,7 @@ class NoteListView(ListAPIView):
 
 class NoteDetailView(RetrieveUpdateDestroyAPIView):
     """
-    API view for retrieving, updating, and deleting a note.
+    API view for retrieving (GET), updating (UPDATE), and deleting (DELETE) a note.
     """
     serializer_class = NoteSerializer
     queryset = Note.objects.all()
@@ -73,14 +75,15 @@ class NoteDetailView(RetrieveUpdateDestroyAPIView):
 
 class TagCreateView(CreateAPIView):
     """
-    API view for creating a new tag.
+    API view for creating a new tag with POST.
+    Required: title: str
     """
     serializer_class = TagSerializer
 
 
 class TagDetailView(RetrieveUpdateDestroyAPIView):
     """
-    API view for retrieving, updating, and deleting a tag.
+    API view for retrieving (GET), updating (UPDATE), and deleting (DELETE) a tag.
     """
     serializer_class = TagSerializer
     queryset = Tag.objects.all()
@@ -95,7 +98,7 @@ class TagDetailView(RetrieveUpdateDestroyAPIView):
 
 class TagListView(ListAPIView):
     """
-    API view for retrieving a list of tags.
+    API view for retrieving a list of all tags.
     """
     serializer_class = TagSerializer
     queryset = Tag.objects.all()

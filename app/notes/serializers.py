@@ -3,6 +3,7 @@ from rest_framework import serializers
 
 
 class NoteSerializer(serializers.ModelSerializer):
+    # Auto add the current user as author, because users can only create/edit their notes
     author = serializers.HiddenField(default=serializers.CurrentUserDefault())
 
     class Meta:

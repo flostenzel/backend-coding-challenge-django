@@ -7,7 +7,7 @@ from app.settings import AUTH_USER_MODEL
 
 
 class Author(AbstractUser):
-    """ "
+    """
     This is the main user model
     """
 
